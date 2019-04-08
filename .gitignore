@@ -1,5 +1,5 @@
 *.txt
-*.o
+build/*.o
 *.md
-*.exe
+bin/*.exe
 
