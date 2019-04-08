@@ -1,6 +1,6 @@
 #include "geometry.h"
 
-void printTriangle(
+extern void printTriangle(
         double x1,
         double y1,
         double x2,
