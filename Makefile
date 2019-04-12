@@ -11,7 +11,7 @@ target1:
 target2:
 	mkdir -p bin
 
-bin/geometry.exe: build/main.o build/areCollinear.o build/circle_intersects.o build/getCos.o build/getMax.o build/getMin.o build/getSlope.o build.getYIntercept.o build/peresech.o build/printCircle.o build/printpoligon.o build/printTriangle.o build/projectionsIntersect.o build/proverka.o
+bin/geometry.exe: build/main.o build/areCollinear.o build/circle_intersects.o build/getCos.o build/getMax.o build/getMin.o build/getSlope.o build/getYIntercept.o build/peresech.o build/printCircle.o build/printPoligon.o build/printTriangle.o build/projectionsIntersect.o build/proverka.o
 	g++ $(CFLAGS) $^ -o $@
 
 build/main.o: src/main.c src/geometry.h
@@ -50,10 +50,10 @@ build/getMin.o: src/getMin.c src/geometry.h
 build/getSlope.o: src/getSlope.c src/geometry.h
 	$(OBJ)
 
-build/getYIntercept.o: src/getYIntercept.o src/geometry.h
+build/getYIntercept.o: src/getYIntercept.c src/geometry.h
 	$(OBJ)
 
-build/projectionsIntersect.o: src/progectionsIntersect.c src/geometry.h
+build/projectionsIntersect.o: src/projectionsIntersect.c src/geometry.h
 	$(OBJ)
 
 clean:

@@ -1,5 +1,31 @@
 #include "geometry.h"
 
+extern double getSlope(
+	double x1, 
+	double y1, 
+	double x2, 
+	double y2);
+extern double getYIntercept(
+	double x1, 
+	double y1, 
+	double x2, 
+	double y2);
+extern double getCos(
+	double x1, 
+	double y1, 
+	double x2, 
+	double y2);
+extern bool projectionsIntersect(
+	double x1, 
+	double x2, 
+	double x3, 
+	double x4);
+extern bool areCollinear(
+	double x1, 
+	double y1, 
+	double x2, 
+	double y2);
+
 int peresech(
         double x1,
         double y1,

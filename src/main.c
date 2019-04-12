@@ -32,8 +32,14 @@ extern void printTriangle(
         int k,
         int lkl,
         int n);
-extern void
-printCircle(double x1, double y1, double r1, bool flag, int k, int lkl, int n);
+extern void printCircle(
+	double x1,
+	double y1, 
+	double r1, 
+	bool flag, 
+	int k, 
+	int lkl,
+	int n);
 extern void printPoligon(
         double x1,
         double y1,
