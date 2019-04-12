@@ -50,7 +50,7 @@ build/getMin.o: src/getMin.c src/geometry.h
 build/getSlope.o: src/getSlope.c src/geometry.h
 	$(OBJ)
 
-build/getYIntercept.o: src/getYInterceot.c src/geometry.h
+build/getYIntercept.o: src/getYIntercept.o src/geometry.h
 	$(OBJ)
 
 build/projectionsIntersect.o: src/progectionsIntersect.c src/geometry.h
