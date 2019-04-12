@@ -36,25 +36,25 @@ build/peresech.o: src/peresech.c src/geometry.h
 	$(OBJ)
 
 build/areCollinear.o: src/areCollinear.c src/geometry.h
-        $(OBJ)
+	$(OBJ)
 
 build/getCos.o: src/getCos.c src/geometry.h
-        $(OBJ)
+	$(OBJ)
 
 build/getMax.o: src/getMax.c src/geometry.h
-        $(OBJ)
+	$(OBJ)
 
 build/getMin.o: src/getMin.c src/geometry.h
-        $(OBJ)
+	$(OBJ)
 
 build/getSlope.o: src/getSlope.c src/geometry.h
-        $(OBJ)
+	$(OBJ)
 
 build/getYIntercept.o: src/getYInterceot.c src/geometry.h
-        $(OBJ)
+	$(OBJ)
 
 build/projectionsIntersect.o: src/progectionsIntersect.c src/geometry.h
-        $(OBJ)
+	$(OBJ)
 
 clean:
 	rm build/*.o

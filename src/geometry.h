@@ -1,5 +1,4 @@
-#include guard
-#include <conio.h>
+#pragma once
 #include <iostream>
 #include <math.h>
 #include <stdio.h>
