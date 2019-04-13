@@ -49,4 +49,3 @@ void printPoligon(
     } else
         printf("intersects: \n   - \n");
 }
-

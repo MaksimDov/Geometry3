@@ -27,4 +27,3 @@ void printCircle(
     } else
         printf("intersects: \n   - \n");
 }
-
