@@ -1,11 +1,7 @@
 #include "geometry.h"
 
-extern double getMax(
-	double x1, 
-	double x2);
-extern double getMin(
-	double x1, 
-	double x2);
+extern double getMax(double x1, double x2);
+extern double getMin(double x1, double x2);
 
 bool projectionsIntersect(double x1, double x2, double x3, double x4)
 {
