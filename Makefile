@@ -1,9 +1,10 @@
 CFLAGS = -Wall -Werror
-OBJ = g++ $(CFAGS) -c $< -o $@
+OBJ = g++ $(CFLAGS) -c $< -o $@
+TEST = g++ $(GFLAGS) -I thirdparty/catch2 -c $< -o $@
 
 .PHONY: clean
 
-all: target1 target2 bin/geometry.exe
+all: target1 target2 target3 target4 bin/geometry.exe
 
 target1:
 	mkdir -p build
@@ -11,56 +12,109 @@ target1:
 target2:
 	mkdir -p bin
 
-bin/geometry.exe: build/main.o build/areCollinear.o build/circle_intersects.o build/getCos.o build/getMax.o build/getMin.o build/getSlope.o build/getYIntercept.o build/peresech.o build/printCircle.o build/printPoligon.o build/printTriangle.o build/projectionsIntersect.o build/proverka.o
+target3:
+	mkdir -p build/src
+
+target4:
+	mkdir -p build/test
+
+
+bin/geometry.exe: build/src/main.o build/src/areCollinear.o build/src/circle_intersects.o build/src/getCos.o build/src/getMax.o build/src/getMin.o build/src/getSlope.o build/src/getYIntercept.o build/src/peresech.o build/src/printCircle.o build/src/printPoligon.o build/src/printTriangle.o build/src/projectionsIntersect.o build/src/proverka.o
 	g++ $(CFLAGS) $^ -o $@
 
-build/main.o: src/main.c src/geometry.h
+build/src/main.o: src/main.c src/geometry.h
 	$(OBJ)
 
-build/circle_intersects.o: src/circle_intersects.c src/geometry.h
+build/src/circle_intersects.o: src/circle_intersects.c src/geometry.h
 	$(OBJ)
 
-build/printCircle.o: src/printCircle.c src/geometry.h
+build/src/printCircle.o: src/printCircle.c src/geometry.h
 	$(OBJ)
 
-build/printPoligon.o: src/printPoligon.c src/geometry.h
+build/src/printPoligon.o: src/printPoligon.c src/geometry.h
 	$(OBJ)
 
-build/printTriangle.o: src/printTriangle.c src/geometry.h
+build/src/printTriangle.o: src/printTriangle.c src/geometry.h
 	$(OBJ)
 
-build/proverka.o: src/proverka.c src/geometry.h
+build/src/proverka.o: src/proverka.c src/geometry.h
 	$(OBJ)
 
-build/peresech.o: src/peresech.c src/geometry.h
+build/src/peresech.o: src/peresech.c src/geometry.h
 	$(OBJ)
 
-build/areCollinear.o: src/areCollinear.c src/geometry.h
+build/src/areCollinear.o: src/areCollinear.c src/geometry.h
 	$(OBJ)
 
-build/getCos.o: src/getCos.c src/geometry.h
+build/src/getCos.o: src/getCos.c src/geometry.h
 	$(OBJ)
 
-build/getMax.o: src/getMax.c src/geometry.h
+build/src/getMax.o: src/getMax.c src/geometry.h
 	$(OBJ)
 
-build/getMin.o: src/getMin.c src/geometry.h
+build/src/getMin.o: src/getMin.c src/geometry.h
 	$(OBJ)
 
-build/getSlope.o: src/getSlope.c src/geometry.h
+build/src/getSlope.o: src/getSlope.c src/geometry.h
 	$(OBJ)
 
-build/getYIntercept.o: src/getYIntercept.c src/geometry.h
+build/src/getYIntercept.o: src/getYIntercept.c src/geometry.h
 	$(OBJ)
 
-build/projectionsIntersect.o: src/projectionsIntersect.c src/geometry.h
+build/src/projectionsIntersect.o: src/projectionsIntersect.c src/geometry.h
 	$(OBJ)
+
+
+
+bin/geometry_test.exe: build/test/test.o build/test/test_circle_intersects.o build/test/test_printCircle.o build/test/test_printPoligon.o build/test/test_printTriangle.o build/test/test_proverka.o build/test/test_getCos.o build/test/test_getMax.o build/test/test_getMin.o build/test/test_getSlope.o build/test/test_getYIntercept.o build/test/test_projectionsIntersect.o
+	g++ $(CFLAGS)  $^ -o $@
+
+build/test/test.o: test/test.c test/geometry.h
+	$(TEST)
+build/test/test_circle_intersects.o: test/test_circle_intersects.c test/geometry.h
+	$(TEST)
+
+build/test/test_printCircle.o: test/test_printCircle.c test/geometry.h
+	$(TEST)
+
+build/test/test_printPoligon.o: test/test_printPoligon.c test/geometry.h
+	$(TEST)
+
+build/test/test_printTriangle.o: test/test_printTriangle.c test/geometry.h
+	$(TEST)
+
+build/test/test_proverka.o: test/test_proverka.c test/geometry.h
+	$(TEST)
+
+build/test/test_areCollinear.o: test/test_areCollinear.c test/geometry.h
+	$(TEST)
+
+build/test/test_getCos.o: test/test_getCos.c test/geometry.h
+	$(TEST)
+
+build/test/test_getMax.o: test/test_getMax.c test/geometry.h
+	$(TEST)
+
+build/test/test_getMin.o: test/test_getMin.c test/geometry.h
+	$(TEST)
+
+build/test/test_getSlope.o: test/test_getSlope.c test/geometry.h
+	$(TEST)
+
+build/test/test_getYIntercept.o: test/test_getYIntercept.c test/geometry.h
+	$(TEST)
+
+build/test/test_projectionsIntersect.o: test/test_projectionsIntersect.c test/geometry.h
+	$(TEST)
+
+
+
 
 clean:
 	rm build/*.o
 	rm bin/*.exe
-	rm -R build
-	rm -R bin
+	rm -R -f build
+	rm -R -f bin
 
 
 
