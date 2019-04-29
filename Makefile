@@ -66,7 +66,7 @@ build/src/projectionsIntersect.o: src/projectionsIntersect.c src/geometry.h
 
 
 
-bin/geometry_test.exe: build/test/test.o build/test/test_circle_intersects.o build/test/test_printCircle.o build/test/test_printPoligon.o build/test/test_printTriangle.o build/test/test_proverka.o build/test/test_getCos.o build/test/test_getMax.o build/test/test_getMin.o build/test/test_getSlope.o build/test/test_getYIntercept.o build/test/test_projectionsIntersect.o
+bin/geometry_test: build/test/test.o build/test/test_circle_intersects.o build/test/test_printCircle.o build/test/test_printPoligon.o build/test/test_printTriangle.o build/test/test_proverka.o build/test/test_getCos.o build/test/test_getMax.o build/test/test_getMin.o build/test/test_getSlope.o build/test/test_getYIntercept.o build/test/test_projectionsIntersect.o
 	g++ $(CFLAGS)  $^ -o $@
 
 build/test/test.o: test/test.c test/geometry.h
