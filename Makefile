@@ -111,10 +111,11 @@ build/test/test_projectionsIntersect.o: test/test_projectionsIntersect.c test/ge
 
 
 clean:
-	rm build/*.o
+	rm build/src/*.o
+	rm build/test/*.o
 	rm bin/*.exe
 	rm -R -f build
-	rm -R -f bin
+
 
 
 
