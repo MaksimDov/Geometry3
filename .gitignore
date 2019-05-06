@@ -3,4 +3,4 @@ build/src/*.o
 build/test/*.o
 *.md
 bin/*.exe
-bin/geometry_test
+bin/geometry_test.*
